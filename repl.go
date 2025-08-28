@@ -17,6 +17,7 @@ type cliCommand struct {
 
 type config struct {
 	pokeapiClient pokeapi.Client
+	pokedex       pokeapi.Pokedex
 	nextURL       *string
 	prevURL       *string
 }
@@ -84,8 +85,13 @@ func getCommands() map[string]cliCommand {
 		},
 		"clear": {
 			name:        "clear",
-			description: "clear the screen",
+			description: "Clear the screen",
 			callback:    commandClear,
+		},
+		"catch": {
+			name:        "catch",
+			description: "Catch a pokemon",
+			callback:    commandCatch,
 		},
 	}
 }

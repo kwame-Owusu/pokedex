@@ -19,3 +19,15 @@ type Encounters struct {
 		} `json:"pokemon"`
 	} `json:"pokemon_encounters"`
 }
+
+type Pokemon struct {
+	Name string
+}
+
+type PokemonDetails struct {
+	BaseExp int `json:"base_experience"`
+}
+
+type Pokedex struct {
+	pokedex map[string]Pokemon
+}
