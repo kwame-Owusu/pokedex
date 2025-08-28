@@ -29,5 +29,5 @@ type PokemonDetails struct {
 }
 
 type Pokedex struct {
-	pokedex map[string]Pokemon
+	Pokemons map[string]Pokemon
 }
