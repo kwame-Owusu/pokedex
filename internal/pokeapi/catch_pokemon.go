@@ -8,7 +8,7 @@ import (
 )
 
 func (c *Client) Catch(pokemon string, pokedex *Pokedex) (bool, error) {
-	fmt.Printf("Throwing ball at %s...", pokemon)
+	fmt.Printf("Throwing ball at %s...\n", pokemon)
 	url := baseURL + "/pokemon/" + pokemon
 
 	req, err := http.NewRequest("GET", url, nil)
@@ -34,7 +34,7 @@ func (c *Client) Catch(pokemon string, pokedex *Pokedex) (bool, error) {
 	pokemonStruct := Pokemon{Name: pokemon}
 	pokedex.Pokemons[pokemon] = pokemonStruct
 	for _, val := range pokedex.Pokemons {
-		fmt.Printf("- %s", val)
+		fmt.Printf("- %s\n", val.Name)
 	}
 	return false, nil
 }
