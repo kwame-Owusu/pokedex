@@ -44,6 +44,8 @@ func (c *Client) Catch(pokemon string, pokedex *Pokedex) (bool, error) {
 		fmt.Printf("%s was caught!\n", pokemon)
 		if _, ok := pokedex.Pokemons[pokemon]; !ok {
 			pokedex.Pokemons[pokemon] = Pokemon{Name: pokemon}
+		} else {
+			fmt.Println("Pokemon already caught")
 		}
 		return true, nil
 	} else {
