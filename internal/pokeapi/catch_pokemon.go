@@ -42,6 +42,7 @@ func (c *Client) Catch(pokemon string, pokedex *Pokedex) (bool, error) {
 	roll := c.rng.Intn(100)
 	if roll < catchChance(pokemonExp.BaseExp) {
 		fmt.Printf("%s was caught!\n", pokemon)
+		fmt.Println("You may now inspect it with the inspect command.")
 		if _, ok := pokedex.Pokemons[pokemon]; !ok {
 			pokedex.Pokemons[pokemon] = Pokemon{Name: pokemon}
 		}
