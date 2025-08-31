@@ -1,9 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func commandInspect(config *config, args ...string) error {
 	pokemon := args[0]
+	if _, ok := config.pokedex.Pokemons[pokemon]; !ok {
+		err := errors.New("you have not caught that pokemon")
+		return err
+	}
+
 	inspectionResp, err := config.pokeapiClient.Inspect(pokemon)
 	if err != nil {
 		return err
