@@ -32,3 +32,15 @@ func commandInspect(config *config, args ...string) error {
 
 	return nil
 }
+
+func commandPokedex(config *config, args ...string) error {
+	pokedex := config.pokedex.Pokemons
+	if len(pokedex) == 0 {
+		return errors.New("No pokemon in pokedex, go catch some pokemons")
+	}
+
+	for _, val := range pokedex {
+		fmt.Printf("- %s", val.Name)
+	}
+	return nil
+}
