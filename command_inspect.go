@@ -40,7 +40,7 @@ func commandPokedex(config *config, args ...string) error {
 	}
 
 	for _, val := range pokedex {
-		fmt.Printf("- %s", val.Name)
+		fmt.Printf("- %s\n", val.Name)
 	}
 	return nil
 }
